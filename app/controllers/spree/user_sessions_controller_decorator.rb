@@ -1,4 +1,4 @@
-Spree::UserSessionsController.class_eval do
+Devise::SessionsController.class_eval do
 
   include Spree::EventTrackerController
 
