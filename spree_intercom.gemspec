@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree_core', '>= 3.1.0', '< 4.0'
+  s.add_dependency 'spree_core', '>= 3.1.0'
   s.add_dependency 'spree_extension'
   s.add_dependency 'intercom', '~> 3.5.25'
   s.add_dependency 'active_model_serializers', '~> 0.10.0'
