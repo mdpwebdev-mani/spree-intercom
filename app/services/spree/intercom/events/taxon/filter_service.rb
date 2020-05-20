@@ -3,7 +3,7 @@ class Spree::Intercom::Events::Taxon::FilterService < Spree::Intercom::BaseServi
   EVENT_NAME = 'filtered-product'
 
   def initialize(options)
-    @user = Spree::User.find_by(id: options[:user_id])
+    @user = Spree.user_class.find_by(id: options[:user_id])
     @time = options[:time]
     @taxon = options[:taxon]
     @filter = options[:filter]

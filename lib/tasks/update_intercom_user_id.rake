@@ -5,7 +5,7 @@ namespace :intercom do
     log = ActiveSupport::Logger.new('log/intercom_process_users.log')
     log.info "Task started at #{Time.now}"
 
-    Spree::User.where(intercom_user_id: nil).find_each do |user|
+    Spree.user_class.where(intercom_user_id: nil).find_each do |user|
       if user.regenerate_intercom_user_id && Spree::Intercom::CreateUserService.new(user.id).create
         log.info "User ##{user.id} updated and record created on Intercom"
       else

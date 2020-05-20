@@ -3,7 +3,7 @@ class Spree::Intercom::Events::Product::ViewService < Spree::Intercom::BaseServi
   EVENT_NAME = 'viewed-product'
 
   def initialize(options)
-    @user = Spree::User.find_by(id: options[:user_id])
+    @user = Spree.user_class.find_by(id: options[:user_id])
     @product = Spree::Product::find_by(id: options[:product_id])
     @time = options[:time]
     super()

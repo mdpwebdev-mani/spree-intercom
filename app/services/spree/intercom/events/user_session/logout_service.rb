@@ -3,7 +3,7 @@ class Spree::Intercom::Events::UserSession::LogoutService < Spree::Intercom::Bas
   EVENT_NAME = 'logged-out'
 
   def initialize(options)
-    @user = Spree::User.find_by(id: options[:user_id])
+    @user = Spree.user_class.find_by(id: options[:user_id])
     @time = options[:time]
     super()
   end

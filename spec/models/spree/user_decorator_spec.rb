@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Spree::User, type: :model do
+RSpec.describe Spree.user_class, type: :model do
 
   let!(:user) { create(:user) }
   let!(:user1) { create(:user) }

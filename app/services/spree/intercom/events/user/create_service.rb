@@ -3,7 +3,7 @@ class Spree::Intercom::Events::User::CreateService < Spree::Intercom::BaseServic
   EVENT_NAME = 'created-account'
 
   def initialize(id)
-    @user = Spree::User.find_by(id: id)
+    @user = Spree.user_class.find_by(id: id)
     super()
   end
 

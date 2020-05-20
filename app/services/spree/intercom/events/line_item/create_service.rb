@@ -3,7 +3,7 @@ class Spree::Intercom::Events::LineItem::CreateService < Spree::Intercom::BaseSe
   EVENT_NAME = 'added-product'
 
   def initialize(options)
-    @user = Spree::User.find_by(id: options[:user_id])
+    @user = Spree.user_class.find_by(id: options[:user_id])
     @line_item = Spree::LineItem.find_by(id: options[:line_item_id])
     @order = Spree::Order.find_by(number: options[:order_number])
     @sku = options[:sku]

@@ -3,7 +3,7 @@ class Spree::Intercom::Events::Order::PlaceService < Spree::Intercom::BaseServic
   EVENT_NAME = 'placed-order'
 
   def initialize(options)
-    @user = Spree::User.find_by(id: options[:user_id])
+    @user = Spree.user_class.find_by(id: options[:user_id])
     @order = Spree::Order.find_by(id: options[:order_id])
     super()
   end

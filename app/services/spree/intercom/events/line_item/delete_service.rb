@@ -3,7 +3,7 @@ class Spree::Intercom::Events::LineItem::DeleteService < Spree::Intercom::BaseSe
   EVENT_NAME = 'removed-product'
 
   def initialize(options)
-    @user = Spree::User.find_by(id: options[:user_id])
+    @user = Spree.user_class.find_by(id: options[:user_id])
     @time = options[:time]
     @order = Spree::Order.find_by(number: options[:order_number])
     @sku = options[:sku]

@@ -4,7 +4,7 @@ class Spree::Intercom::Events::Product::SearchService < Spree::Intercom::BaseSer
 
   def initialize(options)
     @taxon = Spree::Taxon.find_by(id: options[:taxon_id])
-    @user = Spree::User.find_by(id: options[:user_id])
+    @user = Spree.user_class.find_by(id: options[:user_id])
     @time = options[:time]
     @keyword = options[:keyword]
     @filter = options[:filter]

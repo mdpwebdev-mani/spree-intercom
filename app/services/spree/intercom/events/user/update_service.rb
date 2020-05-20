@@ -3,7 +3,7 @@ class Spree::Intercom::Events::User::UpdateService < Spree::Intercom::BaseServic
   EVENT_NAME = 'updated-account'
 
   def initialize(id)
-    @user = Spree::User.find_by(id: id)
+    @user = Spree.user_class.find_by(id: id)
     super()
   end
 

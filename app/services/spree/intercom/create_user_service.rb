@@ -1,7 +1,7 @@
 class Spree::Intercom::CreateUserService < Spree::Intercom::BaseService
 
   def initialize(id)
-    @user = Spree::User.find_by(id: id)
+    @user = Spree.user_class.find_by(id: id)
     super()
   end
 

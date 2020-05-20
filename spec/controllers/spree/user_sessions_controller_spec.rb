@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Spree::UserSessionsController, type: :controller do
+describe Spree.user_classSessionsController, type: :controller do
 
   before do
     allow(controller).to receive(:spree_current_user).and_return(user)

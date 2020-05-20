@@ -3,7 +3,7 @@ class Spree::Intercom::Events::Customer::ReturnService < Spree::Intercom::BaseSe
   EVENT_NAME = 'returned-order'
 
   def initialize(options)
-    @user = Spree::User.find_by(id: options[:user_id])
+    @user = Spree.user_class.find_by(id: options[:user_id])
     @order = Spree::Order.find_by(id: options[:order_id])
     @return = Spree::CustomerReturn.find_by(id: options[:customer_return_id])
     super()

@@ -3,7 +3,7 @@ class Spree::Intercom::Events::Coupon::ApplyService < Spree::Intercom::BaseServi
   EVENT_NAME = 'applied-promotion'
 
   def initialize(options)
-    @user = Spree::User.find_by(id: options[:user_id])
+    @user = Spree.user_class.find_by(id: options[:user_id])
     @order = Spree::Order.find_by(id: options[:order_id])
     @code = options[:code]
     @time = options[:time]
