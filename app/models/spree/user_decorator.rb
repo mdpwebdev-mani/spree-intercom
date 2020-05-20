@@ -2,7 +2,7 @@ Spree.user_class.class_eval do
 
   has_secure_token :intercom_user_id
 
-  validates :intercom_user_id, uniqueness: { case_sensitive: false }
+  validates :intercom_user_id, uniqueness: { case_sensitive: false }, allow_nil: true
 
   after_commit :create_user_on_intercom, on: :create
   after_commit :update_user_on_intercom, on: :update, if: :user_intercom_attributes_changed?
